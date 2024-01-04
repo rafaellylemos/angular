@@ -92,6 +92,8 @@
       <app-input-property [nome]="nomeDoCurso" />
     </article>
   </section>
+
+  <app-output-property [valor]="valorInicial" (mudouValor)="onMudouValor($event)"/>
 }
 @placeholder {
   <span>Carregando...</span>

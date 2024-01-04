@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InputPropertyComponent } from '../input-property/input-property.component';
+import { OutputPropertyComponent } from '../output-property/output-property.component';
 
 @Component({
   selector: 'app-data-binding',
   standalone: true,
-  imports: [FormsModule, InputPropertyComponent],
+  imports: [FormsModule, InputPropertyComponent, OutputPropertyComponent],
   templateUrl: './data-binding.component.html',
   styleUrl: './data-binding.component.css'
 })
@@ -27,6 +28,8 @@ export class DataBindingComponent {
   }
 
   nomeDoCurso: string = 'Angular';
+
+  valorInicial: number =  15;
 
   botaoClicado() {
     alert('Botão clicado!');
@@ -51,5 +54,9 @@ export class DataBindingComponent {
   }
 
   //salvarValor e novoNome são duas formas diferentes de chegar ao mesmo resultado. Pode-se usar qualquer uma. Mas é peferível sempre optar pela verificação de tipo precisa (Ex.: event: Event) para evitar possíveis erros e tornar o código mais confiável.
+
+  onMudouValor(event: any) {
+    console.log(event.novoValor);
+  }
 
 }
