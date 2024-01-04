@@ -1,3 +1,10 @@
 <app-data-binding />
 
+@if (!deletarCiclo) {
+  <app-ciclo [valorInicial]="valor"/> 
+} 
+<button (click)="mudarValor()">Mudar Valor</button>
+<button (click)="destruirCiclo()">Deletar</button>
+
+
 <router-outlet></router-outlet>
