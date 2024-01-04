@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -9,6 +9,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './output-property.component.css'
 })
 export class OutputPropertyComponent {
+
+  @ViewChild('campoInput') campoValorInput!: ElementRef;
 
   @Output() mudouValor = new EventEmitter();
 
@@ -24,12 +26,12 @@ private _valor: number = 0;
   }
 
 incrementa() {
-  this.valor++;
+  this.campoValorInput.nativeElement.value++;
   this.mudouValor.emit({novoValor: this.valor});
 }
 
 decrementa() {
-  this.valor--;
+  this.campoValorInput.nativeElement.value--;
   this.mudouValor.emit({novoValor: this.valor});
 }
 }
