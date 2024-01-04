@@ -1,0 +1,98 @@
+<article>
+  <h3>Class e Style Binding</h3>
+  <div>
+    Selecione uma classe:
+  </div>
+  <select #classe (change)="0">
+    <option value="alert-success">Sucesso</option>
+    <option value="alert-danger">Erro</option>
+    <option value="alert-warning">Alerta</option>
+    <option value="alert-info">Info</option>
+  </select>
+  <br><br>
+
+  <div class="alert {{ classe.value }}" role="alert">
+    Texto colorido conforme o valor do combobox.
+  </div>
+
+  <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+    A simple success alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+    A simple danger alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+    A simple warning alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
+    A simple info alert—check it out!
+  </div>
+  <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+    Esse texto só aparece em caso de erro.
+  </div>
+</article>
+
+<section class="event-binding">
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button (click)="botaoClicado()" class="btn btn-primary">Me clique!</button>
+
+      <br><br>
+
+      <input type="text" 
+        (keyup)="onKeyUp($event)" 
+        (keyup.enter)="salvarValor($event)"
+        (blur)="salvarValor($event)"
+        />
+
+      <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
+
+      <span
+      (mouseover)="OnMouseOverOut()"
+      (mouseout)="OnMouseOverOut()"
+      [class.highlight]="isMouseOver">
+        Passe o mouse sobre mim
+      </span>
+    </div>
+  </article>
+</section>
+
+@defer (on viewport) {
+  <section class="two-way-binding">
+    <article>
+      <h3> Two-way data binding </h3>
+        <div>
+          <input type="text" 
+          [value]="nome"
+          (input)="novoNome($event)"
+          />    
+
+          <input type="text"[(ngModel)]="nome" />
+    
+
+          <p>Você digitou: {{ nome }} </p>
+        </div>
+
+        <div>
+          <input type="text"[(ngModel)]="pessoa.nome">
+          <input type="text"[(ngModel)]="pessoa.idade">
+          <input type="text"[(ngModel)]="pessoa.end.cidade">
+          <input type="text"[(ngModel)]="pessoa.end.estado">
+
+          <p>Meu nome é {{ pessoa.nome }}, eu tenho {{ pessoa.idade }} anos e moro em {{ pessoa.end.cidade }}, no estado de {{ pessoa.end.estado }}.</p>
+        </div>
+    </article>
+  </section>
+
+  <section class="input-output-properties">
+    <article>
+      <h3>Input/Output Properties</h3>
+      <app-input-property [nome]="nomeDoCurso" />
+    </article>
+  </section>
+}
+@placeholder {
+  <span>Carregando...</span>
+}
