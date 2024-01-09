@@ -15,19 +15,19 @@
     Texto colorido conforme o valor do combobox.
   </div>
 
-  <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+  <div class="alert" role="alert" [class.alert-success]="classe.value === 'alert-success'">
     A simple success alert—check it out!
   </div>
-  <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+  <div class="alert" role="alert" [class.alert-danger]="classe.value === 'alert-danger'">
     A simple danger alert—check it out!
   </div>
-  <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+  <div class="alert" role="alert" [class.alert-warning]="classe.value === 'alert-warning'">
     A simple warning alert—check it out!
   </div>
-  <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
+  <div class="alert" role="alert" [class.alert-info]="classe.value === 'alert-info'">
     A simple info alert—check it out!
   </div>
-  <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+  <div class="alert alert-danger" role="alert" [style.display]="classe.value === 'alert-danger' ? 'block' : 'none'">
     Esse texto só aparece em caso de erro.
   </div>
 </article>
