@@ -16,7 +16,8 @@
       }
     }
 
-    @if (mostrarCursos) {<p>Curso Atual: {{ cursoAtual }}</p> }
+    @if (mostrarCursos) {
+      <p>Curso Atual: {{ cursoAtual }}</p> 
 
 @if (mostrarTurnos) {
   <div> <p>Selecione o turno:</p> </div>
@@ -35,3 +36,7 @@
     <button type="button" class="btn btn-outline-dark">Enviar</button>
   </div>
 }
+@if (!clickCurso) {
+  <button type="button" class="btn btn-outline-dark" (click)="closeCoursesOptions()">Recolher Cursos</button>
+}
+    }

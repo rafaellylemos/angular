@@ -15,12 +15,14 @@ export class IfElseComponent {
   turno: string[] = ["Manhã", " Tarde", " Noite"];
   turnoSelecionado: string = "";
   cursoAtual: string = "";
+  clickCurso: boolean = false;
 
 
   hasCurso() {
     if (this.cursos.length > 0) {
       this.turnoSelecionado = this.turno.join(', ');
       this.mostrarTurnos = true;
+      this.clickCurso = true;
     } else {
       console.log("Não tem cursos");
       this.mostrarTurnos = false;
@@ -37,7 +39,16 @@ export class IfElseComponent {
       }
     } else {
       console.log("Não tem cursos");
-      this.mostrarCursos = false;
+      this.mostrarCursos;
+    }
+  }
+
+  closeCoursesOptions() {
+    if (this.cursos.length > 0) {
+      for (let i = 0; i < this.cursos.length; i++) {
+        this.mostrarCursos = false;
+        this.clickCurso = false;
+      }
     }
   }
 
