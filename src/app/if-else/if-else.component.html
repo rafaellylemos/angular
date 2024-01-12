@@ -1,1 +1,37 @@
-<p>if-else works!</p>
+<h3> If/Else </h3>
+
+<button type="button" class="btn btn-outline-dark" (click)="openCoursesOptions()">Mostrar Cursos</button>
+
+@if (mostrarCursos) {
+      @for (curso of cursos; track cursos) {
+        <div>
+          <ul>
+        <li id="1">{{ curso }}</li>
+        <br>
+        <button type="button" class="btn btn-outline-dark" (click)="selecionarCurso(curso)" (click)="hasCurso()"> Quero este! </button>
+      </ul>
+    </div>
+      } @empty {
+        Lista vazia!
+      }
+    }
+
+    @if (mostrarCursos) {<p>Curso Atual: {{ cursoAtual }}</p> }
+
+@if (mostrarTurnos) {
+  <div> <p>Selecione o turno:</p> </div>
+  @for (t of turno; track turno) {
+    <div class="form-check">
+      <label class="form-check-label" for="flexRadioDefault1">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" (change)="selecionarTurno(t)" />
+        {{ t }}
+      </label>
+    </div>
+  }
+}
+
+@if (mostrarCursos && mostrarTurnos) {
+  <div>
+    <button type="button" class="btn btn-outline-dark">Enviar</button>
+  </div>
+}

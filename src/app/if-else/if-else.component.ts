@@ -9,4 +9,45 @@ import { Component } from '@angular/core';
 })
 export class IfElseComponent {
 
+  mostrarCursos: boolean = false;
+  cursos: string[] = ["Angular 17", " Typescript", " HTML5", " CSS3", " SCSS"];
+  mostrarTurnos: boolean = false;
+  turno: string[] = ["Manhã", " Tarde", " Noite"];
+  turnoSelecionado: string = "";
+  cursoAtual: string = "";
+
+
+  hasCurso() {
+    if (this.cursos.length > 0) {
+      this.turnoSelecionado = this.turno.join(', ');
+      this.mostrarTurnos = true;
+    } else {
+      console.log("Não tem cursos");
+      this.mostrarTurnos = false;
+    }
+    console.log(this.turnoSelecionado);
+      
+  }
+
+  openCoursesOptions() {
+    if (this.cursos.length > 0) {
+      for (let i = 0; i < this.cursos.length; i++) {
+        this.mostrarCursos = true;
+        this.cursoAtual = this.cursos[0];
+      }
+    } else {
+      console.log("Não tem cursos");
+      this.mostrarCursos = false;
+    }
+  }
+
+  selecionarCurso(curso: string) {
+    this.cursoAtual = curso;
+    console.log(`Curso selecionado: ${curso}`);
+  }
+
+  selecionarTurno(turno: string) {
+    this.turnoSelecionado = turno;
+    console.log(`Turno selecionado: ${turno}`);
+  }
 }

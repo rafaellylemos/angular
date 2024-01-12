@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormFieldErrorExampleComponent } from './form.component';
 
-describe('FormComponent', () => {
+describe('FormFieldErrorExampleComponent', () => {
   let component: FormFieldErrorExampleComponent;
   let fixture: ComponentFixture<FormFieldErrorExampleComponent>;
 
