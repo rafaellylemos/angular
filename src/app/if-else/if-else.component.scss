@@ -1,8 +1,15 @@
 $default-font-size: 14px;
 $default-margin: 10px;
 $default-color: #008080;
+$other-color: #167516;
 
-@mixin bt-style {
+@mixin text ($cor-texto) {
+  color: $cor-texto;
+  font-size: $default-font-size;
+  margin: $default-margin;
+}
+
+@mixin bt-style () {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,10 +28,7 @@ $default-color: #008080;
 
 // Estilos Gerais
 h3 {
-  display: flex;
-  justify-content: start;
-  color: $default-color;
-  margin: $default-margin;
+  @include text($other-color);
 }
 
 .formulario
@@ -52,8 +56,7 @@ h3 {
 }
 
   .tx {
-    margin: $default-margin;
-    color: $default-color;
+    @include text($default-color);
 
       p:hover {
         @include tx-style-hover;
