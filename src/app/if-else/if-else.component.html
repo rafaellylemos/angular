@@ -18,7 +18,13 @@
 
     @if (mostrarCursos) {
       <div class="tx">
-        <p class="tx">Curso Atual: {{ cursoAtual }}</p> 
+        <p class="tx">Curso Atual: 
+          @if(cursoSelecionado) {
+            <span>
+              {{ cursoAtual }} 
+            </span> 
+          }
+        </p> 
       </div>
 
 @if (mostrarTurnos) {
@@ -35,10 +41,10 @@
 
 @if (mostrarCursos && mostrarTurnos) {
   <div>
-    <button type="button" class="btn btn-outline-dark">Enviar</button>
+    <button type="button" class="btn btn-outline-dark" (click)="done()" (click)="closeCoursesOptions()">Enviar</button>
   </div>
 }
-@if (!clickCurso) {
+
   <button type="button" class="btn btn-outline-dark" (click)="closeCoursesOptions()">Recolher Cursos</button>
-}
+
     }

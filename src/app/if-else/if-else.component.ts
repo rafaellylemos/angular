@@ -16,13 +16,13 @@ export class IfElseComponent {
   turnoSelecionado: string = "";
   cursoAtual: string = "";
   clickCurso: boolean = false;
+  cursoSelecionado: boolean = false;
 
 
   hasCurso() {
     if (this.cursos.length > 0) {
       this.turnoSelecionado = this.turno.join(', ');
       this.mostrarTurnos = true;
-      this.clickCurso = true;
     } else {
       console.log("Não tem cursos");
       this.mostrarTurnos = false;
@@ -43,22 +43,35 @@ export class IfElseComponent {
     }
   }
 
+  cleanFields() {
+    this.mostrarCursos = false;
+    this.mostrarTurnos = false;
+    this.cursoAtual = "";
+    this.clickCurso = false;
+    this.cursoSelecionado = false;
+    this.turnoSelecionado = "";
+  }
+
   closeCoursesOptions() {
     if (this.cursos.length > 0) {
       for (let i = 0; i < this.cursos.length; i++) {
-        this.mostrarCursos = false;
-        this.clickCurso = false;
+        this.cleanFields();
       }
     }
   }
 
   selecionarCurso(curso: string) {
     this.cursoAtual = curso;
+    this.cursoSelecionado = true;
     console.log(`Curso selecionado: ${curso}`);
   }
 
   selecionarTurno(turno: string) {
     this.turnoSelecionado = turno;
     console.log(`Turno selecionado: ${turno}`);
+  }
+
+  done() {
+    window.alert("Envio ok!");
   }
 }
