@@ -1,0 +1,69 @@
+$default-font-size: 14px;
+$default-margin: 10px;
+$default-color: #008080;
+
+@mixin bt-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-size: $default-font-size;
+  margin: $default-margin;
+}
+
+@mixin tx-style-hover {
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: underline;
+    margin: 20px;
+}
+
+// Estilos Gerais
+h3 {
+  display: flex;
+  justify-content: start;
+  color: $default-color;
+  margin: $default-margin;
+}
+
+.formulario
+  p 
+    .form-check {
+    margin: $default-margin;
+  }
+
+.cursoAtual {
+  ul{
+    list-style: none;
+  }
+
+  li {
+    margin: $default-margin;
+  }
+
+  li:hover {
+    @include tx-style-hover;
+  }
+
+  button {
+    @include bt-style;
+  }
+}
+
+  .tx {
+    margin: $default-margin;
+    color: $default-color;
+
+      p:hover {
+        @include tx-style-hover;
+      }
+}
+
+button {
+  @include bt-style;
+}
+
+.formulario {
+  margin: $default-margin;
+}

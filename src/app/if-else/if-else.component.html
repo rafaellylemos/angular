@@ -4,7 +4,7 @@
 
 @if (mostrarCursos) {
       @for (curso of cursos; track cursos) {
-        <div>
+        <div class="cursoAtual">
           <ul>
         <li id="1">{{ curso }}</li>
         <br>
@@ -17,10 +17,12 @@
     }
 
     @if (mostrarCursos) {
-      <p>Curso Atual: {{ cursoAtual }}</p> 
+      <div class="tx">
+        <p class="tx">Curso Atual: {{ cursoAtual }}</p> 
+      </div>
 
 @if (mostrarTurnos) {
-  <div> <p>Selecione o turno:</p> </div>
+  <div class="formulario"> <p>Selecione o turno:</p> </div>
   @for (t of turno; track turno) {
     <div class="form-check">
       <label class="form-check-label" for="flexRadioDefault1">
