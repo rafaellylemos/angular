@@ -6,14 +6,14 @@ import { CicloComponent } from './ciclo/ciclo.component';
 import { MenuComponent } from './menu/menu.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {FormFieldErrorExampleComponent } from './form/form.component';
-import { IfElseComponent } from './if-else/if-else.component';
+import { RootCfComponent } from './Controle-fluxo/root-cf/root-cf.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, DataBindingComponent, CicloComponent, NgIf, MenuComponent, MatSlideToggleModule,
-    FormFieldErrorExampleComponent, IfElseComponent],
+    FormFieldErrorExampleComponent, RootCfComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
