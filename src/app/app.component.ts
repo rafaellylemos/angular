@@ -7,17 +7,19 @@ import { MenuComponent } from './menu/menu.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {FormFieldErrorExampleComponent } from './form/form.component';
 import { RootCfComponent } from './Controle-fluxo/root-cf/root-cf.component';
+import { MenuShopComponent } from './page-shop-test/menu-shop/menu-shop.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, DataBindingComponent, CicloComponent, NgIf, MenuComponent, MatSlideToggleModule,
-    FormFieldErrorExampleComponent, RootCfComponent],
+    FormFieldErrorExampleComponent, RootCfComponent, MenuShopComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title: string = 'curso';
 
   valor: number = 5;

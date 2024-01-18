@@ -1,0 +1,8 @@
+<div>
+  <h2 (click)="onClick()" (keyup.enter)="onClick()" tabindex="0" [class.favorito]="meuFavorito">
+    <span>Favoritar </span>
+    <i class="bi bi-star" [hidden]="meuFavorito"></i>
+    <i class="bi bi-star-fill" [hidden]="!meuFavorito"></i>
+    <span class="escolha" [hidden]="!meuFavorito"> Boa escolha!</span>
+  </h2>
+</div>

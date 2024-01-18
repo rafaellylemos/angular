@@ -1,0 +1,10 @@
+.carousel {
+  position: relative;
+  z-index: 1;
+  widith: 100%;
+}
+
+.custom-image {
+  height: 700px;
+  object-fit: cover;
+}

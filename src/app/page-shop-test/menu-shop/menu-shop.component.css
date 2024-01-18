@@ -1,0 +1,29 @@
+.navbar {
+  top: 80px;
+  z-index: 1000;
+  background-color: #FFF8;
+  text-align: center;
+}
+
+.container-menu, .container-icons {
+  display: flex;
+  flex-direction: row;
+  margin: auto 1.5rem;
+}
+
+.navbar-text {
+  font-size: 32px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.span {
+  margin-right: 1rem;
+  margin-left: 0.2rem;
+}
+
+.container-icons {
+  font-size: 18px;
+  top: 0;
+  right: 0;
+}
