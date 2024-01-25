@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { DataBindingComponent } from './data-binding/data-binding.component';
@@ -18,7 +18,7 @@ import { MenuShopComponent } from './page-shop-test/menu-shop/menu-shop.componen
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   title: string = 'curso';
 
@@ -26,7 +26,22 @@ export class AppComponent {
 
   deletarCiclo: boolean = false;
 
-  mudarValor() {
+  name: string = '';
+
+  ngOnInit(): void {
+    while (this.name === '' || this.name === null) {
+      const userInput = window.prompt('Digite seu nome: ');
+
+      if (userInput !== null) {
+        this.name = userInput;
+        window.alert('Olá, ' + userInput + '!');
+      } else {
+        window.alert('Nome inválido!');
+      }
+    }
+  }
+
+  mudarValor(): void {
     this.valor++;
   }
 

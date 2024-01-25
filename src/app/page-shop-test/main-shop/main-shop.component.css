@@ -2,4 +2,12 @@
   margin: 0 3rem;
   padding-top: 3rem;
   background-color: #CDB99E;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.item {
+  margin: 0.8rem 5rem;
 }

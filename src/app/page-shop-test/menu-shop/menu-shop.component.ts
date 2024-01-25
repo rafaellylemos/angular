@@ -10,5 +10,5 @@ import { CarouselComponent } from '../carousel/carousel.component';
   styleUrl: './menu-shop.component.css'
 })
 export class MenuShopComponent {
-
+  
 }

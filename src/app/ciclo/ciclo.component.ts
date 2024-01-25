@@ -10,6 +10,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 export class CicloComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   @Input() valorInicial: number = 10;
+  @Input() name: string = '';
 
   constructor() {
     this.log('constructor');
@@ -20,7 +21,7 @@ export class CicloComponent implements OnChanges, OnInit, DoCheck, AfterContentI
   }
 
   ngOnInit(): void {
-    this.log('ngOnInit');
+    this.log(`${ this.name }`);
   }
 
   ngDoCheck() {

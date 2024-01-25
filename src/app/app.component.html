@@ -7,7 +7,7 @@
 
 
 @if (!deletarCiclo) {
-  <app-ciclo [valorInicial]="valor"/> 
+  <app-ciclo [name]="name" [valorInicial]="valor"/> 
 } 
 <button (click)="mudarValor()">Mudar Valor</button>
 <button (click)="destruirCiclo()">Deletar</button>

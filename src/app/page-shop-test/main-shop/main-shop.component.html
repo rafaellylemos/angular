@@ -1,3 +1,12 @@
 <div class="principal">
-  <p>teste</p>
+  @for (item of produtos; track $index) {
+    <app-card class="item" [title]="item.title" [value]="item.value" [content]="item.content"/>
+  }
+  <!-- <app-card class="item"/>
+  <app-card class="item"/>
+  <app-card class="item"/>
+  <app-card class="item"/>
+  <app-card class="item"/>
+  <app-card class="item"/>
+  <app-card class="item"/> -->
 </div>
