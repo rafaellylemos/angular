@@ -5,8 +5,11 @@
 <app-form-field-error-example />
 <app-data-binding />
 
-
-@if (!deletarCiclo) {
+<button (click)="solicitarInfo()"> Solicitar nome </button>
+<br>
+<br>
+<br>
+@if (!deletarCiclo && pedirNome) {
   <app-ciclo [name]="name" [valorInicial]="valor"/> 
 } 
 <button (click)="mudarValor()">Mudar Valor</button>
@@ -15,5 +18,7 @@
 <app-root-cf />
 <br><br>
 <app-menu-shop />
+
+<app-check-simple />
 
 <router-outlet></router-outlet>
