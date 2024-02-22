@@ -15,7 +15,19 @@ import { Component,
   styleUrl: './check-simple.component.css'
 })
 export class CheckSimpleComponent implements OnInit, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit {
+
+  quantidade:number = 0;
+
   constructor() {}
+
+  adicionar() {
+    this.quantidade += 1;
+  }
+
+  decrementar() {
+    this.quantidade -= 1;
+  }
+
   ngOnInit(): void {
     console.log("ngOnInit");
   }
